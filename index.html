@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Boss v-1.1| BY Niloy Mahmud</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="//polyfill.io/v3/polyfill.min.js?features=es2015%2CIntersectionObserver" crossorigin="anonymous">
+    </script>
+    <script src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
+
+
+</head>
+
+<body>
+    
+    <div id="canvas-shapes"></div>
+
+    <section class="container">
+        <marquee behavior="scroll" scrollamount='4' style="color: white; font-size: 18px; margin-top: 0px; background: rgba(220, 20, 60, 0.316); padding: 10px; z-index: 99; display: block; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Welcome To My To Do List Web-Application "Task Boss version-1.1". (This Web-Application Is Under Development.)</marquee>
+
+        <div id="app">
+            <h1 style="color: rgba(220, 20, 60, 0.446);">ADD TASKS</h1>
+            <div class="input">
+                <input type="text" placeholder="Enter Your Task" v-model="newInput" @keyup.enter="addItem()">
+                <button @click="addItem()">ADD</button>
+            </div>
+            <main class="main">
+                <ul class="tabs">
+                    <li v-for="(item,index) in tabs" @click="tabIndex = index; editingItem = {};"
+                        :class="{'active':tabIndex===index}">{{item}}</li>
+                </ul>
+                <ul class="content">
+                    <li class="item" v-for="item in filteredList" :key="item.id">
+                        <div class="item-content" v-if="editingItem !== item"
+                            @dblclick="editingItem = item; editingInput = item.content">
+                            <div class="checkbox">
+                                <input type="checkbox" :id="item.id" v-model="item.done">
+                                <label :for="item.id" :class="{'line-through':item.done}">{{ item.content }}</label>
+                            </div>
+                            <div class="button">
+                                <button class="edt-Btn" @click="editingItem = item; editingInput = item.content"><i
+                                        class="fad fa-edit"></i></button>
+                                <button class="del-Btn" @click="deleteItem(item)"><i class="fad fa-trash"
+                                        style="color: crimson;"></i></button>
+                            </div>
+                        </div>
+                        <div class="item-edit" v-if="editingItem === item">
+                            <input type="text" v-model="editingInput" @keyup.enter="editItem(item)"
+                                @keyup.esc="editingItem = {}">
+                            <div class="button">
+                                <button @click="editingItem = {}">Cancel</button>
+                                <button @click="editItem(item)">Update</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="bottom">
+                    <div class="amount">
+                        Remaning Tasks ({{filteredList.length}})
+                    </div>
+                    <button class="clear" @click="clearList()">Clear {{tabs[tabIndex]}}</button>
+                </div>
+            </main>
+            <footer>
+                <i class="fad fa-copyright"></i> Copyright Claim <a href="https://www.facebook.com/niloy.mahmud.72">Niloy
+                  Mahmud</a>
+              </footer>
+        </div>
+        
+    </section>
+
+
+
+
+
+
+    <!-- Script Links -->
+    <script src="js/jquery-3.6.0.slim.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/vue.js"></script>
+    <script src="js/fontawsome.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/bgAnimation.js"></script>
+
+</body>
+
+</html>

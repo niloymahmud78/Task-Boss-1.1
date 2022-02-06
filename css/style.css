@@ -1,0 +1,220 @@
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+input,
+button {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    background-color: transparent;
+}
+
+button {
+	cursor: pointer;
+	padding: 5px 0px;
+	background: transparent;
+	color: #fff;
+	border-radius: 5px;
+	font-size: 18px;
+}
+
+.del-Btn:hover {
+    background-color: #ffffff;
+}
+
+.edt-Btn:hover {
+    background-color: #ffffff;
+    color: #232b55;
+}
+
+.del-Btn,
+.edt-Btn {
+    padding: 5px 10px;
+    transition: .6s;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+}
+
+#app {
+    width: 90%;
+    max-width: 100%;
+    min-height: 500px;
+    margin: 80px auto 40px;
+    border: 1px solid crimson;
+    border-radius: 15px;
+    padding: 40px 30px;
+    box-shadow: 0px 2px 8px -1px crimson;
+    background-color: #60667130;
+    overflow: hidden;
+    position: relative;
+}
+
+#app .input {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 5px;
+	margin: 10px 0;
+	background-color: rgba(0, 0, 0, 0.289);
+	border: 1px solid crimson;
+}
+
+#app .input input {
+	padding: 10px 20px;
+	color: crimson;
+}
+
+#app .input button {
+	padding: 10px 15px 13px;
+	background-color: crimson;
+	color: white;
+	font-weight: bold;
+	border-radius: 0 3px 3px 0;
+	font-size: 20px;
+}
+
+#app .input button:hover {
+    background-color: rgb(255, 255, 255);
+    color: crimson;
+}
+
+#app .input button:active {
+    background-color: rgb(106, 96, 96);
+    color: rgb(255, 255, 255);
+}
+
+.line-through {
+	text-decoration: line-through;
+	color: gray;
+}
+
+.tabs {
+    display: flex;
+}
+
+.tabs li {
+	cursor: pointer;
+	border: 2px solid transparent;
+	border-radius: 5px 5px 0 0;
+	padding: 5px;
+	background-color: transparent;
+	color: white;
+	margin-right: 4px;
+	font-weight: bold;
+	transition: .9s;
+	border-bottom: 1px solid crimson;
+}
+
+.tabs li:hover, .tabs li.active {
+	background-color: #dc143c69;
+	color: white;
+}
+.content {
+	padding: 0 !important;
+}
+
+.main .content {
+    border-radius: 0 5px 0 0;
+    background-color: rgba(138, 131, 124, 0.309);
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+}
+
+.main .content .item {
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.193);
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.main .content .item .item-content,
+.main .content .item .item-edit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main .content .item .item-edit input {
+    background-color: #FFF;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.bottom {
+	background-color: #dc143c4f;
+	border-radius: 0 0 5px 5px;
+	padding: 6px 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: white;
+}
+
+
+  /* Footer */
+  footer {
+	width: 100%;
+	text-align: center;
+	color: #fff;
+	left: 0;
+	content: "";
+	top: 20px;
+	margin-top: 10px;
+}
+  
+  footer a{
+	color: crimson;
+	border-bottom: 2px solid crimson;
+	text-decoration: none;
+	border-width: 0;
+	transition: ease-in .3s;
+  }
+  footer a:hover{
+	  color: white;
+	  border-width: 5px;
+  }
